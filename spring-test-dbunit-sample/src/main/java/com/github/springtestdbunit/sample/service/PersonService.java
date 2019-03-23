@@ -41,6 +41,10 @@ public class PersonService {
 		return query.getResultList();
 	}
 
+	public void add(Person person) {
+		this.entityManager.persist(person);
+	}
+
 	public void remove(int personId) {
 		Person person = this.entityManager.find(Person.class, personId);
 		this.entityManager.remove(person);
